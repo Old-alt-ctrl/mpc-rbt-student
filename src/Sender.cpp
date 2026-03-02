@@ -12,7 +12,10 @@ void Sender::Node::run()
 
 void Sender::Node::onDataTimerTick()
 {
-  UNIMPLEMENTED(__PRETTY_FUNCTION__);
+  data.frame = "map";
+  data.x = 1.23;
+  data.y = 4.56;
+  data.z = 7.89;
 
   data.timestamp =
     static_cast<uint64_t>(std::chrono::system_clock::now().time_since_epoch().count());

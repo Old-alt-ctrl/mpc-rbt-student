@@ -2,9 +2,11 @@ name: "communication_example"
 root: <%= @settings["working_directory"]%>
 
 startup_window: monitoring
+pre_window:
+  - source /opt/ros/humble/setup.bash
 windows:
   - monitoring:
       layout: even-vertical
       panes:
-        - echo "Watch the receiver status here !"
-        - echo "Watch the sender status here !"
+        - watch -n 1 "systemctl status example_receiver.service"
+        - watch -n 1 "systemctl status example_sender.service"

@@ -1,12 +1,15 @@
 [Unit]
-Description = Example sender
+Description = Example receiver
 Wants = network-online.target
 After = local-fs.target network-online.target
 
 [Service]
-User =
-WorkingDirectory =
-ExecStart =
+User = oliver
+
+WorkingDirectory = /home/oliver/workspace/mpc-rbt-student
+
+ExecStart = /home/oliver/workspace/mpc-rbt-student/run_sender.sh
+
 Restart = on-failure
 RestartSec = 5
 TimeoutStopSec = 5
